@@ -4,6 +4,8 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
+	private int nbConnaissance = 0;
+	private Humain[] memoire = new Humain[30];
 	
 	
 	
@@ -31,6 +33,20 @@ public class Humain {
 			perdreArgent(prix);
 		} else {
 			parler("Je n'ai plus que " + argent + " sous en poche. Je ne peux même pas m'offrir " + bien + " à " + prix + " sous" );
+		}
+	}
+	
+	public void faireConnaissance(Humain humain2) {
+		direBonjour();
+		humain2.repondre(this);
+		memoriser(humain2);
+	}
+	
+	public void memoriser(Humain humain) {
+		if (nbConnaissance == 30) {
+			
+		} else {
+
 		}
 	}
 	
