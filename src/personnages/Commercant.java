@@ -6,13 +6,17 @@ public class Commercant extends Humain {
 		super(nom, boisson, argent);
 	}
 
-	public void seFaireExtorquer() {
-		perdreArgent(getArgent());
-		parler("J'ai tout perdu ! Le monde est trop injuste...");
+	public int seFaireExtorquer() {
+		int perte = getArgent();
+		perdreArgent(perte);
+		parler("OH NON ! J'ai tout perdu ! Le monde est trop injuste...");
+		return perte;
 	}
 	
 	public void recevoir(int argent) {
 		gagnerArgent(argent);
 		parler(argent + " sous ! Je te remercie généreux donateurs !");
 	}
+	
+	
 }
